@@ -22,6 +22,6 @@ class VerifyEmailController extends Controller
             event(new Verified($request->user()));
         }
 
-        return redirect()->intended(route('student.timetable', absolute: false).'?verified=1');
+        return redirect()->intended(route(auth()->user()->getRedirectRouteName(), absolute: false).'?verified=1');
     }
 }
