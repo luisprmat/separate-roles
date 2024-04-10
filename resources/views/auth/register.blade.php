@@ -71,6 +71,36 @@
             />
         </div>
 
+        <!-- Role -->
+        <div class="mt-4">
+            <x-input-label :value="__('Register as:')" />
+
+            <label class="text-sm text-gray-600 dark:text-gray-400">
+                <input
+                    type="radio"
+                    class="border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
+                    name="role_id"
+                    id="role_id"
+                    value="1"
+                    checked
+                />
+                {{ __('Student') }}
+            </label>
+
+            <label class="ml-3 text-sm text-gray-600 dark:text-gray-400">
+                <input
+                    type="radio"
+                    class="border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
+                    name="role_id"
+                    id="role_id"
+                    value="2"
+                />
+                {{ __('Teacher') }}
+            </label>
+
+            <x-input-error :messages="$errors->get('role_id')" class="mt-2" />
+        </div>
+
         <div class="mt-4 flex items-center justify-end">
             <a
                 class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
