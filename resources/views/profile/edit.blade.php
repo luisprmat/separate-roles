@@ -1,4 +1,11 @@
-<x-app-layout>
+@php
+    $layoutName = match ((int) auth()->user()->role_id) {
+        1 => 'student-layout',
+        2 => 'teacher-layout',
+    };
+@endphp
+
+<x-dynamic-component :component="$layoutName">
     <x-slot name="header">
         <h2
             class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200"
@@ -34,4 +41,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-dynamic-component>
