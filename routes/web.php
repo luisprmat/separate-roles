@@ -10,13 +10,16 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::prefix('student')
+    Route::middleware('role:1')
+        ->prefix('student')
         ->name('student.')
         ->group(function () {
             Route::get('timetable', [Student\TimetableController::class, 'index'])
                 ->name('timetable');
         });
-    Route::prefix('teacher')
+
+    Route::middleware('role:2')
+        ->prefix('teacher')
         ->name('teacher.')
         ->group(function () {
             Route::get('timetable', [Teacher\TimetableController::class, 'index'])
