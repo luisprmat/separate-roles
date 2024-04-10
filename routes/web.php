@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Student;
 use App\Http\Controllers\Teacher;
@@ -24,6 +25,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->group(function () {
             Route::get('timetable', [Teacher\TimetableController::class, 'index'])
                 ->name('timetable');
+        });
+
+    Route::middleware('role:3')
+        ->prefix('admin')
+        ->name('admin.')
+        ->group(function () {
+            Route::get('users', [Admin\UsersController::class, 'index'])
+                ->name('users');
         });
 });
 

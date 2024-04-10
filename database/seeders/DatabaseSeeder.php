@@ -15,12 +15,13 @@ class DatabaseSeeder extends Seeder
     {
         Role::create(['name' => 'student']);
         Role::create(['name' => 'teacher']);
+        Role::create(['name' => 'admin']);
 
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::create([
+            'name' => 'Administrador',
+            'email' => 'admin@admin.com',
+            'password' => 'password',
+            'role_id' => 3,
+        ]);
     }
 }

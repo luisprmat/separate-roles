@@ -2,6 +2,7 @@
     $layoutName = match ((int) auth()->user()->role_id) {
         1 => 'student-layout',
         2 => 'teacher-layout',
+        3 => 'admin-layout',
     };
 @endphp
 
