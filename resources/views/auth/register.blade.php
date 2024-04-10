@@ -75,26 +75,17 @@
         <div class="mt-4">
             <x-input-label :value="__('Register as:')" />
 
-            <label class="text-sm text-gray-600 dark:text-gray-400">
-                <input
-                    type="radio"
-                    class="border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
-                    name="role_id"
-                    id="role_id"
-                    value="1"
-                    checked
-                />
+            <label
+                class="text-sm text-gray-600 has-[:disabled]:opacity-50 dark:text-gray-400"
+            >
+                <x-radio-input name="role_id" value="1" checked />
                 {{ __('Student') }}
             </label>
 
-            <label class="ml-3 text-sm text-gray-600 dark:text-gray-400">
-                <input
-                    type="radio"
-                    class="border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
-                    name="role_id"
-                    id="role_id"
-                    value="2"
-                />
+            <label
+                class="ml-3 text-sm text-gray-600 has-[:disabled]:opacity-50 dark:text-gray-400"
+            >
+                <x-radio-input name="role_id" value="2" />
                 {{ __('Teacher') }}
             </label>
 
